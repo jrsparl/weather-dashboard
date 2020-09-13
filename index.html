@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <title>Weather Dashboard</title>
+</head>
+<body>
+    <header class="col-12 bg-dark text-light sticky-top p-4 p-lg-3">
+        <h1 class="text-center">Weather Dashboard</h1>
+    </header>
+    <main>
+        <div class="ml-5 row justify-content-start">
+        <div class="col-12 col-md-4 d-flex flex-column p-4 p-lg-3">
+            <h3 class="text-left text-dark">Search for a City:</h3>
+            <form id="city-form">
+                <input name="city-search" id="city-search" type="text" autofocus="true" class="form-input pull-left"/>
+                <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </form>
+
+                <div class="mt-3 justify-content-around">
+                <ul class="list-group">
+                <li class="list-group-item flex-row justify-space-between align-center">Austin</li>
+                <li class="list-group-item flex-row justify-space-between align-center">Dallas</li>
+                <li class="list-group-item flex-row justify-space-between align-center">Houston</li>
+                </ul>
+                </div>
+        </div>
+
+        <div class="col-12 col-md-8 mt-3" class="card">
+            <div id="current-weather-container">
+                <!-- <h3 class="card-title">Atlanta(8/15/2020)</h3> -->
+                <!-- <p class="card-text">Temperature:</p> -->
+                <!-- <p class="card-text">Humdity:</p> -->
+                <!-- <p class="card-text">Wind Speed:</p>
+                <p class="card-text">UV Index:</p> -->
+            </div>
+            <div id="extended-forecast-container">
+                <h3 class="text-left text-dark">5-Day Forecast:</h3>
+                <div class="col-2 mt-3 bg-primary card">
+                    
+                    <div class="card-body"></div>
+                </div>
+            </div>
+            
+          </div>
+        </div>
+
+    </main>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
