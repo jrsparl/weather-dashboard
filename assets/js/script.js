@@ -27,14 +27,16 @@ var getCurrentWeather = function(city){
 
     var getUVIndex = function(lat, lon){
         //debugger
-        var apiUrl = "http://api.openweathermap.org/data/2.5/uvi?lat=" + lat +"&lon=" + lon + "&" + apiKey
-        fetch(apiUrl).then(function(response) {
+        var apiUrl2 = "http://api.openweathermap.org/data/2.5/uvi?lat=" + lat +"&lon=" + lon + "&" + apiKey
+        //debugger
+        fetch(apiUrl2).then(function(response) {
             if (response.ok) {
                 response.json().then(function(data) {
                     //displayWeather(data, city);
                     var uvData = data;
-                    debugger
+                    //debugger
                     console.log(uvData)
+                    //debugger
                     return uvData;
                 });
             } else {
@@ -96,10 +98,10 @@ var displayWeather = function(cityData, cityName){
     
     var lat = cityData.coord.lat;
     var lon = cityData.coord.lon;
-    var UVdata = function(lat, lon){
-        getUVIndex(lat, lon)
-    };
-    debugger
+    //debugger
+    var UVdata = getUVIndex(lat, lon);
+    console.log(UVdata)
+    //debugger
     var uvIndex = UVdata.value
     var weatherDetailsEl3 = document.createElement("p")
     weatherDetailsEl3.classList = "card-text"
