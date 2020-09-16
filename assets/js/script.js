@@ -10,7 +10,7 @@ var cityListEl = document.querySelector("#city-list-items")
 
 var getCurrentWeather = function(city, isCityStored){
    
-    var apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&" + apiKey
+    var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&" + apiKey
     fetch(apiUrl).then(function(response) {
         if (response.ok) {
             response.json().then(function(data) {
@@ -57,7 +57,7 @@ var getFiveDayForecast = function(lat, lon){
 
     var getUVIndex = function(lat, lon){
         //debugger
-        var apiUrl2 = "http://api.openweathermap.org/data/2.5/uvi?" + apiKey +"&lat=" + lat + "&lon=" + lon
+        var apiUrl2 = "https://api.openweathermap.org/data/2.5/uvi?" + apiKey +"&lat=" + lat + "&lon=" + lon
         //debugger
         fetch(apiUrl2).then(function(response) {
             if (response.ok) {
@@ -113,7 +113,7 @@ var displayWeather = function(cityData, cityName){
     weatherContainerEl.classList = "card-body border border-secondary";
     var iconCode = cityData.weather[0].icon; 
     var weatherIcon = document.createElement("img")
-    var iconurl = "http://openweathermap.org/img/w/" + iconCode + ".png";
+    var iconurl = "https://openweathermap.org/img/w/" + iconCode + ".png";
     weatherIcon.setAttribute("src", iconurl)
 
     var weatherEl = document.createElement("h3")
@@ -196,7 +196,7 @@ var displayFiveDayForecast = function(fiveDayData){
         fiveDayCard.appendChild(cardTitle)
         //append card image
         var cardImage = document.createElement("img")
-        var iconurl = "http://openweathermap.org/img/w/" + wIconId + ".png";
+        var iconurl = "https://openweathermap.org/img/w/" + wIconId + ".png";
         cardImage.setAttribute("src", iconurl)
         fiveDayCard.appendChild(cardImage)
         //append temp p
